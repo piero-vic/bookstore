@@ -1,12 +1,19 @@
+import PropTypes from 'prop-types';
 import styles from './BooksList.module.css';
 
-function BooksList() {
+function BooksList(props) {
+  const { books } = props;
+
   return (
     <div className={styles.container}>
       <ul>
-        <li>Book 1</li>
-        <li>Book 2</li>
-        <li>Book 3</li>
+        {
+          books.map((book) => (
+            <li key={book.title}>
+              {`${book.title} by ${book.author}`}
+            </li>
+          ))
+        }
       </ul>
       <form action="">
         <input type="text" name="" id="" />
@@ -15,5 +22,9 @@ function BooksList() {
     </div>
   );
 }
+
+BooksList.propTypes = {
+  books: PropTypes.instanceOf(Array).isRequired,
+};
 
 export default BooksList;
