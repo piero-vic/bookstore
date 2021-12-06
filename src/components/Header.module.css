@@ -1,0 +1,12 @@
+.header {
+  background-color: grey;
+  padding: 3vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  gap: 3vh;
+}
