@@ -7,15 +7,23 @@ function BooksList() {
   const booksStore = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
-  const submitBookToStore = () => {
+  const submitBookToStore = (e) => {
+    e.preventDefault();
+
     const id = uuidv4();
+    const titleInput = document.getElementById('books-input');
+    const authorInput = document.getElementById('author-input');
+
     const newBook = {
       id,
-      title: 'TEST',
-      author: 'TEST',
+      title: titleInput.value,
+      author: authorInput.value,
     };
 
     dispatch(addBook(newBook));
+
+    titleInput.value = '';
+    authorInput.value = '';
   };
 
   return (
@@ -29,9 +37,10 @@ function BooksList() {
           ))
         }
       </ul>
-      <form action="">
-        <input type="text" name="" id="" />
-        <button type="button" onClick={submitBookToStore}>Add Book</button>
+      <form action="" onSubmit={submitBookToStore}>
+        <input type="text" name="" placeholder="Book" id="books-input" required />
+        <input type="text" name="" placeholder="Author" id="author-input" required />
+        <button type="submit">Add Book</button>
       </form>
     </div>
   );
