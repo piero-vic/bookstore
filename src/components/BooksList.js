@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './BooksList.module.css';
 import { addBook } from '../redux/books/books';
+import Book from './Book';
 
 function BooksList() {
   const booksStore = useSelector((state) => state.books);
@@ -31,9 +32,7 @@ function BooksList() {
       <ul>
         {
           booksStore.map((book) => (
-            <li key={book.id}>
-              {`${book.title} by ${book.author}`}
-            </li>
+            <Book key={book.id} book={book} />
           ))
         }
       </ul>
