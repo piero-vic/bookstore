@@ -13,8 +13,8 @@ function Book(props) {
   };
   return (
     <li>
-      {`${book.title} by ${book.author}`}
-      <button type="button" id={book.id} onClick={deleteBookFromStore}>Delete</button>
+      {`${book.title} | ${book.category} `}
+      <button type="button" id={book.item_id} onClick={deleteBookFromStore}>Delete</button>
     </li>
   );
 }

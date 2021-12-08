@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './BooksList.module.css';
-import { addBook } from '../redux/books/books';
+import { fetchAddBook } from '../redux/books/books';
 import Book from './Book';
 
 function BooksList() {
@@ -13,18 +13,18 @@ function BooksList() {
 
     const id = uuidv4();
     const titleInput = document.getElementById('books-input');
-    const authorInput = document.getElementById('author-input');
+    const categoryInput = document.getElementById('category-input');
 
     const newBook = {
-      id,
+      item_id: id,
       title: titleInput.value,
-      author: authorInput.value,
+      category: categoryInput.value,
     };
 
-    dispatch(addBook(newBook));
+    dispatch(fetchAddBook(newBook));
 
     titleInput.value = '';
-    authorInput.value = '';
+    categoryInput.value = '';
   };
 
   return (
@@ -32,13 +32,13 @@ function BooksList() {
       <ul>
         {
           booksStore.map((book) => (
-            <Book key={book.id} book={book} />
+            <Book key={book.title} book={book} />
           ))
         }
       </ul>
       <form action="" onSubmit={submitBookToStore}>
         <input type="text" name="" placeholder="Book" id="books-input" required />
-        <input type="text" name="" placeholder="Author" id="author-input" required />
+        <input type="text" name="" placeholder="Category" id="category-input" required />
         <button type="submit">Add Book</button>
       </form>
     </div>

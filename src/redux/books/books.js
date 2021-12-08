@@ -19,6 +19,20 @@ export const addBook = (payload) => ({
   payload,
 });
 
+export const fetchAddBook = (payload) => async (dispatch) => {
+  const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${process.env.REACT_APP_API_KEY}/books`;
+  const response = await fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (response.ok) {
+    dispatch(addBook(payload));
+  }
+};
+
 export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
   payload,
