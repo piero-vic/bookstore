@@ -8,7 +8,7 @@ const booksReducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload);
+      return state.filter((book) => book.item_id !== action.payload);
     default:
       return state;
   }
@@ -37,5 +37,13 @@ export const removeBook = (payload) => ({
   type: REMOVE_BOOK,
   payload,
 });
+
+export const fetchRemoveBook = (payload) => async (dispatch) => {
+  const url = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${process.env.REACT_APP_API_KEY}/books/${payload}`;
+  const response = await fetch(url, { method: 'DELETE' });
+  if (response.ok) {
+    dispatch(removeBook(payload));
+  }
+};
 
 export default booksReducer;

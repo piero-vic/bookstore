@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { fetchRemoveBook } from '../redux/books/books';
 
 function Book(props) {
   const { book } = props;
@@ -9,8 +9,9 @@ function Book(props) {
 
   const deleteBookFromStore = (event) => {
     const { id } = event.currentTarget;
-    dispatch(removeBook(id));
+    dispatch(fetchRemoveBook(id));
   };
+
   return (
     <li>
       {`${book.title} | ${book.category} `}
