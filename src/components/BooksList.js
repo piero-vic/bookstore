@@ -1,12 +1,18 @@
+import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import styles from './BooksList.module.css';
-import { fetchAddBook } from '../redux/books/books';
+import { populateList, fetchAddBook } from '../redux/books/books';
 import Book from './Book';
+import getBooks from '../getBooks';
 
 function BooksList() {
   const booksStore = useSelector((state) => state.books);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    getBooks().then((result) => dispatch(populateList(result)));
+  }, []);
 
   const submitBookToStore = (e) => {
     e.preventDefault();
