@@ -42,7 +42,11 @@ function BooksList() {
           ))
         }
       </ul>
+
+      <div className={styles.line} />
+
       <form action="" onSubmit={submitBookToStore}>
+        <h2 className={styles.formTitle}>ADD NEW BOOK</h2>
         <input type="text" name="" placeholder="Book" id="books-input" required />
         <input type="text" name="" placeholder="Category" id="category-input" required />
         <button type="submit">Add Book</button>
