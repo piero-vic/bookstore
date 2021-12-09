@@ -18,6 +18,12 @@ git clone https://github.com/piero-vic/bookstore.git && cd bookstore
 ### Prerequisites
 You need to have `npm` installed on your local machine.
 
+You also need the an id the API. Follow the instructions [here](https://www.notion.so/Bookstore-API-51ea269061f849118c65c0a53e88a739) and then create a file named `.env` on the root folder of the project. Store the key in this file.
+
+```
+REACT_APP_API_KEY=<YOUR_API_KEY>
+```
+
 ### Install
 Install the npm packages.
 
