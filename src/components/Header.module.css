@@ -1,12 +1,37 @@
 .header {
-  background-color: grey;
-  padding: 3vh;
+  background-color: #fff;
+  padding: 1.438rem 6.188rem 1.688rem 6.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2.9rem;
+}
+
+.title {
+  font-size: 1.875rem;
+  color: #0290ff;
 }
 
 .navLinks {
   display: flex;
+  flex-grow: 1;
+  align-items: center;
   gap: 3vh;
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.person {
+  width: 1.063rem;
+  height: 1.063rem;
+  color: #0290ff;
+  border: solid 1px #e8e8e8;
+  padding: 0.5rem;
+  border-radius: 50%;
+  margin-left: auto;
 }
