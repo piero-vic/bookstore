@@ -26,7 +26,34 @@ li {
   border: solid 1px #e8e8e8;
 }
 
+.form {
+  display: grid;
+  grid-template-columns: 6fr 3fr 2fr;
+  gap: 1.1rem;
+}
+
 .formTitle {
   color: #888;
   font-size: 1.25rem;
+  grid-column: span 3;
+}
+
+input {
+  padding: 0.813rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+::placeholder{
+  color: #c4c4c4;
+}
+
+.formBtn {
+  background-color: #0290ff;
+  border: none;
+  border-radius: 3px;
+  font-family: 'Roboto Slab', serif;
+  color: #fff;
+  font-weight: bold;
 }
