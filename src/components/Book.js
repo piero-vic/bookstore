@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import { CircularProgressbar } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 import { fetchRemoveBook } from '../redux/books/books';
 import styles from './Book.module.css';
 
@@ -21,11 +23,21 @@ function Book(props) {
         <p className={styles.author}>Author</p>
         <div className={styles.btnContainer}>
           <button type="button">Comments</button>
-          <span>|</span>
+          <span className={styles.btnDiv}>|</span>
           <button type="button" id={book.item_id} onClick={deleteBookFromStore}>Remove</button>
-          <span>|</span>
+          <span className={styles.btnDiv}>|</span>
           <button type="button">Edit</button>
         </div>
+      </div>
+      <div className={styles.prog}>
+        <div className={styles.progCircle}>
+          <CircularProgressbar />
+        </div>
+        <p className={styles.progText}>
+          <span className={styles.progNum}>0%</span>
+          <br />
+          Completed
+        </p>
       </div>
     </li>
   );
