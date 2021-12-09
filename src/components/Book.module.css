@@ -1,11 +1,11 @@
 .book {
-  padding: 1.625rem;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
   background-color: #fff;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   display: flex;
   justify-content: space-between;
-  gap: 3rem-;
+  gap: 3rem;
 }
 
 .category {
@@ -46,9 +46,10 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  margin-left: auto;
 }
 
-.progCircle { 
+.progCircle {
   width: 5.625rem;
   max-height: 5.625rem;
   margin-left: auto;
@@ -64,4 +65,33 @@ button {
   color: #121212;
   font-size: 2rem;
   opacity: 100%;
+}
+
+.chapter {
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chapter p {
+  font-family: 'Roboto Slab', serif;
+}
+
+.chapterHeading {
+  font-size: 0.8rem;
+  color: rgba(18, 18, 18, 0.5);
+}
+
+.chapterTitle {
+  font-size: 1rem;
+}
+
+.chapterBtn {
+  margin-top: auto;
+  padding: 0.5rem 1.375rem;
+  border-radius: 3px;
+  color: #fff;
+  background-color: #0290ff;
+  font-weight: 300;
 }

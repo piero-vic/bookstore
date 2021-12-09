@@ -39,6 +39,11 @@ function Book(props) {
           Completed
         </p>
       </div>
+      <div className={styles.chapter}>
+        <p className={styles.chapterHeading}>CURRENT CHAPTER</p>
+        <p className={styles.chapterTitle}>Introduction</p>
+        <button type="button" className={styles.chapterBtn}>UPDATE PROGRESS</button>
+      </div>
     </li>
   );
 }
